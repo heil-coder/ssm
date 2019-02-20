@@ -1,0 +1,14 @@
+/.idea
+/.vscode
+*.log
+/*.zip
+*.swp
+*.swo
+*.swn
+*~
+*jdbc.properties
+bin/
+target/
+.settings/
+.classpath
+.project
