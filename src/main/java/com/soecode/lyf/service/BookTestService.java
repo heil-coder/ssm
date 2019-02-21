@@ -25,13 +25,6 @@ public interface BookTestService {
 	 */
 	List<Book> getList();
 
-	/**
-	 * 预约图书
-	 * 
-	 * @param bookId
-	 * @param studentId
-	 * @return
-	 */
-	AppointExecution appoint(long bookId, long studentId);
+
 
 }

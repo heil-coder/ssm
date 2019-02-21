@@ -44,6 +44,8 @@ public class BookController {
 	@RequestMapping(value = "/listing", method = RequestMethod.GET)
 	private String listing(Model model) {
 		List<Book> list = bookTestService.getList();
+        //Book book = bookTestService.getById(1000);
+        System.out.println(list);
 		model.addAttribute("list", list);
 		// list.jsp + model = ModelAndView
 		return "list";// WEB-INF/jsp/"list".jsp

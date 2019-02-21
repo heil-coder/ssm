@@ -1,14 +1,21 @@
 package com.soecode.lyf.entity;
 
+import javax.persistence.*;
 /**
  * 图书实体
  */
+@Entity
+@Table(name = "Book")
 public class Book {
 
+    @Id
+    @GeneratedValue
 	private long bookId;// 图书ID
 
+    @Column(name = "name")
 	private String name;// 图书名称
 
+    @Column(name = "number")
 	private int number;// 馆藏数量
 
 	public Book() {
