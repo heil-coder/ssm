@@ -21,6 +21,7 @@ import com.soecode.lyf.enums.AppointStateEnum;
 import com.soecode.lyf.exception.NoNumberException;
 import com.soecode.lyf.exception.RepeatAppointException;
 import com.soecode.lyf.service.BookService;
+import com.soecode.lyf.service.BookTestService;
 
 @Controller
 @RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list
@@ -30,10 +31,19 @@ public class BookController {
 
 	@Autowired
 	private BookService bookService;
+	@Autowired
+	private BookTestService bookTestService;
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	private String list(Model model) {
 		List<Book> list = bookService.getList();
+		model.addAttribute("list", list);
+		// list.jsp + model = ModelAndView
+		return "list";// WEB-INF/jsp/"list".jsp
+	}
+	@RequestMapping(value = "/listing", method = RequestMethod.GET)
+	private String listing(Model model) {
+		List<Book> list = bookTestService.getList();
 		model.addAttribute("list", list);
 		// list.jsp + model = ModelAndView
 		return "list";// WEB-INF/jsp/"list".jsp
