@@ -14,14 +14,15 @@
         <td>name</td>
         <td>馆藏数量</td>
     </tr>
-    <c:forEach items="${list}" var="vo" varStatus="st">
         <tr>
-            <td>${vo.bookId}</td>
-            <td><a href="/ssm/book/${vo.bookId}/detail">${vo.name}</a></td>
-            <td>${vo.number}</td>
+            <td>${book.bookId}</td>
+            <td><a href="/ssm/book/${book.bookId}/detail">${book.name}</a></td>
+            <td>${book.number}</td>
 
         </tr>
-    </c:forEach>
 </table>
+<div>
+    <a href="/ssm/book/list">Book List</a>
+</div>
 </body>
 </html>
