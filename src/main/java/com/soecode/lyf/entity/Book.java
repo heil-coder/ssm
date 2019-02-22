@@ -5,11 +5,12 @@ import javax.persistence.*;
  * 图书实体
  */
 @Entity
-@Table(name = "Book")
+@Table(name = "book")
 public class Book {
 
     @Id
     @GeneratedValue
+    @Column(name = "book_id")
 	private long bookId;// 图书ID
 
     @Column(name = "name")
