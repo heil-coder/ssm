@@ -16,13 +16,13 @@
     </tr>
         <tr>
             <td>${book.bookId}</td>
-            <td><a href="/ssm/book/${book.bookId}/detail">${book.name}</a></td>
+            <td><a href="/book/${book.bookId}/detail">${book.name}</a></td>
             <td>${book.number}</td>
 
         </tr>
 </table>
 <div>
-    <a href="/ssm/book/list">Book List</a>
+    <a href="/book/list">Book List</a>
 </div>
 </body>
 </html>

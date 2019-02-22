@@ -17,7 +17,7 @@
     <c:forEach items="${list}" var="vo" varStatus="st">
         <tr>
             <td>${vo.bookId}</td>
-            <td><a href="/ssm/book/${vo.bookId}/detail">${vo.name}</a></td>
+            <td><a href="/book/${vo.bookId}/detail">${vo.name}</a></td>
             <td>${vo.number}</td>
 
         </tr>

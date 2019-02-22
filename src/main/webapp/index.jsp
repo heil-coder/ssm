@@ -9,11 +9,11 @@
 <body>
 test
 <div>
-    <a href="/ssm/book/list">Book List</a>
+    <a href="/book/list">Book List</a>
 </div>
 
 <div>
-    <a href="/ssm/book/listing">Book Listing</a>
+    <a href="/book/listing">Book Listing</a>
 </div>
 </body>
 </html>
