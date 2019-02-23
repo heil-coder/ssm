@@ -19,7 +19,7 @@ import com.soecode.lyf.exception.NoNumberException;
 import com.soecode.lyf.exception.RepeatAppointException;
 import com.soecode.lyf.service.BookService;
 
-@Service
+@Service("book")
 public class BookServiceImpl implements BookService {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());

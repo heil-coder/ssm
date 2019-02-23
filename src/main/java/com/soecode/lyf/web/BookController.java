@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ import com.soecode.lyf.enums.AppointStateEnum;
 import com.soecode.lyf.exception.NoNumberException;
 import com.soecode.lyf.exception.RepeatAppointException;
 import com.soecode.lyf.service.BookService;
-import com.soecode.lyf.service.BookTestService;
+import com.soecode.lyf.service.BookHibernateService;
 
 @Controller
 @RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list
@@ -30,9 +31,11 @@ public class BookController {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
+    @Qualifier("book")
 	private BookService bookService;
 	@Autowired
-	private BookTestService bookTestService;
+    @Qualifier("bookHibernate")
+	private BookHibernateService bookHibernateService;
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	private String list(Model model) {
@@ -43,7 +46,7 @@ public class BookController {
 	}
 	@RequestMapping(value = "/listing", method = RequestMethod.GET)
 	private String listing(Model model) {
-		List<Book> list = bookTestService.getList();
+		List<Book> list = bookHibernateService.getList();
         //Book book = bookTestService.getById(1000);
         System.out.println(list);
 		model.addAttribute("list", list);

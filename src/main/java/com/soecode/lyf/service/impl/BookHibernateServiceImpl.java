@@ -18,10 +18,10 @@ import com.soecode.lyf.enums.AppointStateEnum;
 import com.soecode.lyf.exception.AppointException;
 import com.soecode.lyf.exception.NoNumberException;
 import com.soecode.lyf.exception.RepeatAppointException;
-import com.soecode.lyf.service.BookTestService;
+import com.soecode.lyf.service.BookHibernateService;
 
-@Service
-public class BookTestServiceImpl implements BookTestService {
+@Service("bookHibernate")
+public class BookHibernateServiceImpl implements BookHibernateService{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -43,4 +43,9 @@ public class BookTestServiceImpl implements BookTestService {
 		return bookRepository.findAll();
 	}
 
+    @Override
+    public AppointExecution appoint(long bookId, long studentId){
+        AppointExecution appoint = new AppointExecution();
+        return appoint;
+    }
 }
